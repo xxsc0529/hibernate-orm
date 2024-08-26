@@ -239,6 +239,7 @@ dependencyResolutionManagement {
             def mariadbVersion = version "mariadb", "3.4.0"
             def mssqlVersion = version "mssql", "12.4.2.jre11"
             def mysqlVersion = version "mysql", "8.2.0"
+            def oceanbaseVersion = version "oceanbase", "4.2.0.0"
             def oracleVersion = version "oracle", "23.4.0.24.05"
             def oracleLegacyVersion = version "oracleLegacy", "11.2.0.4"
             def pgsqlVersion = version "pgsql", "42.7.1"
@@ -254,6 +255,7 @@ dependencyResolutionManagement {
             library( "postgresql", "org.postgresql", "postgresql" ).versionRef( pgsqlVersion )
             library( "cockroachdb", "org.postgresql", "postgresql" ).versionRef( pgsqlVersion )
             library( "mysql", "com.mysql", "mysql-connector-j" ).versionRef( mysqlVersion )
+            library( "oceanbase", "com.oceanbase", "oceanbase-client" ).versionRef( oceanbaseVersion )
             library( "tidb", "com.mysql", "mysql-connector-j" ).versionRef( tidbVersion )
             library( "mariadb", "org.mariadb.jdbc", "mariadb-java-client" ).versionRef( mariadbVersion )
             library( "oracle", "com.oracle.database.jdbc", "ojdbc11" ).versionRef( oracleVersion )

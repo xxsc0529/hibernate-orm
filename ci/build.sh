@@ -6,6 +6,8 @@ if [ "$RDBMS" == "h2" ]; then
   goal=""
 elif [ "$RDBMS" == "hsqldb" ] || [ "$RDBMS" == "hsqldb_2_6" ]; then
   goal="-Pdb=hsqldb"
+elif [ "$RDBMS" == "oceanbase" ] || [ "$RDBMS" == "oceanbase_4_2" ]; then
+    goal="-Pdb=oceanbase_ci"
 elif [ "$RDBMS" == "mysql" ] || [ "$RDBMS" == "mysql_8_0" ]; then
   goal="-Pdb=mysql_ci"
 elif [ "$RDBMS" == "mariadb" ] || [ "$RDBMS" == "mariadb_10_4" ]; then

@@ -16,10 +16,10 @@ else
 fi
 
 oceanbase(){
-  oceanbase_latest
+  oceanbase_4_2
 }
 
-oceanbase_latest(){
+oceanbase_4_2(){
       $CONTAINER_CLI rm -f oceanbase || true
       $CONTAINER_CLI run --name oceanbase -e MODE=slim -e OB_ROOT_PASSWORD=hibernate_orm_test  -p 2881:2881 -d oceanbase/oceanbase-ce:4.2.0.0
       OUTPUT=
@@ -1012,7 +1012,7 @@ if [ -z ${1} ]; then
     echo -e "\tmssql_2022"
     echo -e "\tmssql_2017"
     echo -e "\toceanbase"
-    echo -e "\toceanbase_latest"
+    echo -e "\toceanbase_4_2"
     echo -e "\tmysql"
     echo -e "\tmysql_8_2"
     echo -e "\tmysql_8_1"

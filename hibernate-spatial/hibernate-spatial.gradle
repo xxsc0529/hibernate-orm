@@ -46,6 +46,8 @@ tasks.test {
 			   'cockroachdb',
 			   'mariadb',
 			   'mariadb_ci',
+			   'oceanbase',
+			   'oceanbase_ci',
 			   'mysql',
 			   'mysql_ci',
 			   'oracle',

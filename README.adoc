@@ -163,6 +163,10 @@ The following table illustrates a list of commands for various databases that ca
 |`./docker_db.sh mysql`
 |`./gradlew test -Pdb=mysql_ci`
 
+|OceanBase
+|`./docker_db.sh oceanbase`
+|`./gradlew test -Pdb=oceanbase_ci`
+
 |MariaDB
 |`./docker_db.sh mariadb`
 |`./gradlew test -Pdb=mariadb_ci`
