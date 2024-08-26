@@ -159,6 +159,20 @@ public enum Database {
 			return "org.mariadb.jdbc.Driver";
 		}
 	},
+	OCEANBASE {
+		@Override
+		public Dialect createDialect(DialectResolutionInfo info) {
+			return new MySQLDialect( info );
+		}
+		@Override
+		public boolean productNameMatches(String databaseName) {
+			return "OceanBase".equals( databaseName );
+		}
+		@Override
+		public String getDriverClassName(String jdbcUrl) {
+			return "com.oceanbase.jdbc.Driver";
+		}
+	},
 
 	MYSQL {
 		@Override

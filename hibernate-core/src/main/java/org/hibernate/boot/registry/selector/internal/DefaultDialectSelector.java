@@ -65,6 +65,8 @@ public class DefaultDialectSelector implements DialectSelector {
 			case "MariaDB106":
 			case "MariaDB":
 				return MariaDBDialect.class;
+			case "OceanBase":
+				return MySQLDialect.class;
 			case "MySQL5":
 			case "MySQL55":
 			case "MySQL57":

@@ -33,7 +33,7 @@ oceanbase_4_2(){
           fi
           n=$((n+1))
           echo "Wait for boot success"
-          sleep 3
+          sleep 30
       done
       if [ "$n" -ge 5 ]; then
         echo "boot failed!"
