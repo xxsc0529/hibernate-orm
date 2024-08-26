@@ -21,8 +21,7 @@ oceanbase(){
 
 oceanbase_latest(){
       $CONTAINER_CLI rm -f oceanbase || true
-      $CONTAINER_CLI run --name oceanbase -e MODE=slim -e OB_ROOT_PASSWORD=hibernate_orm_test  -p 2881:2881 -d oceanbase/oceanbase-ce:4.2.0.0 --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_as_cs --skip-character-set-client-handshake --log-bin-trust-function-creators=1 --lower_case_table_names=2
-      # Give the container some time to start
+      $CONTAINER_CLI run --name oceanbase -e MODE=slim -e OB_ROOT_PASSWORD=hibernate_orm_test  -p 2881:2881 -d oceanbase/oceanbase-ce:4.2.0.0
       OUTPUT=
       n=0
       until [ "$n" -ge 5 ]
