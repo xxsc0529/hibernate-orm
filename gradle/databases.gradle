@@ -115,7 +115,7 @@ ext {
                         'jdbc.driver': 'com.oceanbase.jdbc.Driver',
                         'jdbc.user'  : 'root@test',
                         'jdbc.pass'  : 'hibernateormtest',
-                        'jdbc.url'   : 'jdbc:oceanbase://' + dbHost + '/test',
+                        'jdbc.url'   : 'jdbc:oceanbase://' + dbHost + ':2881/test',
                         'jdbc.datasource' : 'com.oceanbase.jdbc.Driver',
 //                        'jdbc.datasource' : 'com.oceanbase.jdbc.MysqlDataSource',
                         'connection.init_sql' : ''
@@ -125,7 +125,7 @@ ext {
                         'jdbc.driver': 'com.oceanbase.jdbc.Driver',
                         'jdbc.user'  : 'root@test',
                         'jdbc.pass'  : 'hibernateormtest',
-                        'jdbc.url'   : 'jdbc:oceanbase://' + dbHost + '/test',
+                        'jdbc.url'   : 'jdbc:oceanbase://' + dbHost + ':2881/test',
                         'jdbc.datasource' : 'com.oceanbase.jdbc.Driver',
 //                        'jdbc.datasource' : 'com.oceanbase.jdbc.MysqlDataSource',
                         'connection.init_sql' : ''
