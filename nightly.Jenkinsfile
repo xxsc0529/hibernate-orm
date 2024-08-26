@@ -29,6 +29,7 @@ stage('Configure') {
 		// Minimum supported versions
 		new BuildEnvironment( dbName: 'hsqldb_2_6' ),
 		new BuildEnvironment( dbName: 'mysql_8_0' ),
+		new BuildEnvironment( dbName: 'oceanbase_4_2' ),
 		new BuildEnvironment( dbName: 'mariadb_10_5' ),
 		new BuildEnvironment( dbName: 'postgresql_12' ),
 		new BuildEnvironment( dbName: 'edb_12' ),

@@ -61,6 +61,12 @@ pipeline {
 								}
 								sh "./docker_db.sh mysql"
 								break;
+							case "oceanbase":
+								docker.withRegistry('https://index.docker.io/v1/', 'hibernateci.hub.docker.com') {
+									docker.image('oceanbase:4.2.0.0').pull()
+								}
+								sh "./docker_db.sh oceanbase"
+								break;
 							case "mssql":
 								docker.image('mcr.microsoft.com/mssql/server@sha256:5439be9edc3b514cf647bcd3651779fa13f487735a985f40cbdcfecc60fea273').pull()
 								sh "./docker_db.sh mssql"
