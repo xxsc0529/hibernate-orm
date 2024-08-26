@@ -28,7 +28,7 @@ oceanbase_4_2(){
       do
           # Need to access STDERR. Thanks for the snippet https://stackoverflow.com/a/56577569/412446
           { OUTPUT="$( { $CONTAINER_CLI logs oceanbase; } 2>&1 1>&3 3>&- )"; } 3>&1;
-          if [[ $OUTPUT == *"deploy success!"* ]]; then
+          if [[ $OUTPUT == *"Wait for observer init ok"* ]]; then
             break;
           fi
           n=$((n+1))

@@ -101,6 +101,7 @@ dependencies {
 	testRuntimeOnly dbLibs.hsqldb
 	testRuntimeOnly dbLibs.postgresql
 	testRuntimeOnly dbLibs.mssql
+	testRuntimeOnly dbLibs.oceanbase
 	testRuntimeOnly dbLibs.informix
 	testRuntimeOnly dbLibs.cockroachdb
 	testRuntimeOnly dbLibs.sybase
@@ -117,6 +118,9 @@ dependencies {
 	}
 	else if ( db.startsWith( 'mysql' ) || db.startsWith( 'tidb' ) ) {
 		testRuntimeOnly dbLibs.mysql
+	}
+	else if ( db.startsWith( 'oceanbase' ) ) {
+		testRuntimeOnly dbLibs.oceanbase
 	}
 	else if ( db.startsWith( 'mariadb' ) ) {
 		testRuntimeOnly dbLibs.mariadb
