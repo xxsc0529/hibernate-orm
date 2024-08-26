@@ -41,6 +41,7 @@ jobs:
           - rdbms: h2
           - rdbms: hsqldb
           - rdbms: mysql
+          - rdbms: oceanbase
           - rdbms: mariadb
           - rdbms: postgresql
           - rdbms: edb
