@@ -34,7 +34,7 @@ oceanbase_latest(){
           fi
           n=$((n+1))
           echo "Wait for observer init ok"
-          sleep 3
+          sleep 180
       done
       if [ "$n" -ge 5 ]; then
         echo "boot failed!"
