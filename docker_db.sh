@@ -15,6 +15,34 @@ else
   PRIVILEGED_CLI=""
 fi
 
+oceanbase(){
+  oceanbase_latest
+}
+
+oceanbase_latest(){
+      $CONTAINER_CLI rm -f oceanbase || true
+      $CONTAINER_CLI run --name oceanbase -e MODE=slim -e OB_ROOT_PASSWORD=hibernate_orm_test  -p 2881:2881 -d oceanbase/oceanbase-ce:latest --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_as_cs --skip-character-set-client-handshake --log-bin-trust-function-creators=1 --lower_case_table_names=2
+      # Give the container some time to start
+      OUTPUT=
+      n=0
+      until [ "$n" -ge 5 ]
+      do
+          # Need to access STDERR. Thanks for the snippet https://stackoverflow.com/a/56577569/412446
+          { OUTPUT="$( { $CONTAINER_CLI logs mysql; } 2>&1 1>&3 3>&- )"; } 3>&1;
+          if [[ $OUTPUT == *"Start observer ok"* ]]; then
+            break;
+          fi
+          n=$((n+1))
+          echo "Wait for observer init ok"
+          sleep 3
+      done
+      if [ "$n" -ge 5 ]; then
+        echo "boot failed!"
+      else
+        echo "boot success!"
+      fi
+}
+
 mysql() {
   mysql_8_2
 }
@@ -984,6 +1012,8 @@ if [ -z ${1} ]; then
     echo -e "\tmssql"
     echo -e "\tmssql_2022"
     echo -e "\tmssql_2017"
+    echo -e "\toceanbase"
+    echo -e "\toceanbase_latest"
     echo -e "\tmysql"
     echo -e "\tmysql_8_2"
     echo -e "\tmysql_8_1"

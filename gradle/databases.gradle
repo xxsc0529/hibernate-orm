@@ -120,6 +120,16 @@ ext {
 //                        'jdbc.datasource' : 'com.mysql.cj.jdbc.MysqlDataSource',
                         'connection.init_sql' : ''
                 ],
+                oceanbase : [
+                        'db.dialect' : 'org.hibernate.dialect.MySQLDialect',
+                        'jdbc.driver': 'com.oceanbase.jdbc.Driver',
+                        'jdbc.user'  : 'hibernateormtest',
+                        'jdbc.pass'  : 'hibernateormtest',
+                        'jdbc.url'   : 'jdbc:oceanbase://' + dbHost + '/hibernate_orm_test',
+                        'jdbc.datasource' : 'com.oceanbase.jdbc.Driver',
+//                        'jdbc.datasource' : 'com.oceanbase.jdbc.MysqlDataSource',
+                        'connection.init_sql' : ''
+                ],
                 mysql_ci : [
                         'db.dialect' : 'org.hibernate.dialect.MySQLDialect',
                         'jdbc.driver': 'com.mysql.cj.jdbc.Driver',
