@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 if [ "$RDBMS" == 'mysql' ]; then
-  bash $DIR/../docker_db.sh mysql
+  bash $DIR/../docker_db.sh oceanbase
 elif [ "$RDBMS" == 'oceanbase' ]; then
   bash $DIR/../docker_db.sh oceanbase
 elif [ "$RDBMS" == 'mariadb' ]; then
