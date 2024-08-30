@@ -48,6 +48,8 @@ tasks.test {
 			   'mariadb_ci',
 			   'mysql',
 			   'mysql_ci',
+			   'oceanbase',
+			   'oceanbase_ci',
 			   'oracle',
 			   'oracle_ci',
 			   'oracle_xe_ci',

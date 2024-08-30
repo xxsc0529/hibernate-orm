@@ -15,6 +15,7 @@ else
   PRIVILEGED_CLI=""
 fi
 
+
 mysql() {
   mysql_8_2
 }
@@ -726,6 +727,34 @@ oracle_db23c() {
     grant DB_DEVELOPER_ROLE to hibernate_orm_test_$RUNID;
 EOF
 }
+oceanbase(){
+  oceanbase_4_2
+}
+
+oceanbase_4_2(){
+      $CONTAINER_CLI rm -f oceanbase || true
+      $CONTAINER_CLI run --name oceanbase -e MODE=slim  -e OB_ROOT_PASSWORD=hibernateormtest  -p 2881:2881 -d oceanbase/oceanbase-ce:4.2.0.0
+    # Give the container some time to start
+    OUTPUT=
+    n=0
+    until [ "$n" -ge 10 ]
+    do
+        # Need to access STDERR. Thanks for the snippet https://stackoverflow.com/a/56577569/412446
+        { OUTPUT="$( { $CONTAINER_CLI logs oceanbase; } 2>&1 1>&3 3>&- )"; } 3>&1;
+        if [[ $OUTPUT == *"boot success"* ]]; then
+          break;
+        fi
+        n=$((n+1))
+        echo "Waiting for OceanBase to start..."
+        sleep 10
+    done
+
+    if [ "$n" -ge 10 ]; then
+      echo "OceanBase failed to start and configure after 100 seconds"
+    else
+      echo "OceanBase successfully started"
+    fi
+}
 
 oracle() {
   oracle_23
@@ -988,6 +1017,8 @@ if [ -z ${1} ]; then
     echo -e "\tmysql_8_2"
     echo -e "\tmysql_8_1"
     echo -e "\tmysql_8_0"
+    echo -e "\toceanbase"
+    echo -e "\toceanbase_4_2"
     echo -e "\toracle"
     echo -e "\toracle_23"
     echo -e "\toracle_21"

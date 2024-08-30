@@ -14,6 +14,8 @@ elif [ "$RDBMS" == "postgresql" ] || [ "$RDBMS" == "postgresql_12" ]; then
   goal="-Pdb=pgsql_ci"
 elif [ "$RDBMS" == "edb" ] || [ "$RDBMS" == "edb_12" ]; then
   goal="-Pdb=edb_ci -DdbHost=localhost:5444"
+elif [ "$RDBMS" == "oceanbase" ] || [ "$RDBMS" == "oceanbase_4_2" ]; then
+  goal="-Pdb=oceanbase_ci"
 elif [ "$RDBMS" == "oracle" ]; then
   goal="-Pdb=oracle_ci"
 elif [ "$RDBMS" == "oracle_xe" ] || [ "$RDBMS" == "oracle_21" ]; then

@@ -113,6 +113,8 @@ dependencies {
 	testRuntimeOnly dbLibs.informix
 	testRuntimeOnly dbLibs.cockroachdb
 	testRuntimeOnly dbLibs.sybase
+	testRuntimeOnly dbLibs.oceanbase
+
 	testRuntimeOnly rootProject.fileTree(dir: 'drivers', include: '*.jar')
 
 	// Since both the DB2 driver and HANA have a package "net.jpountz" we have to add dependencies conditionally
@@ -132,6 +134,9 @@ dependencies {
 	}
 	else if ( db.startsWith( 'firebird' ) ) {
 		testRuntimeOnly dbLibs.firebird
+	}
+	else if ( db.startsWith( 'oceanbase' ) ) {
+		testRuntimeOnly dbLibs.oceanbase
 	}
 	else if ( db.startsWith( 'oracle' ) ) {
 		testRuntimeOnly dbLibs.oracle

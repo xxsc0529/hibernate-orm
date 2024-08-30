@@ -44,6 +44,7 @@ jobs:
           - rdbms: mariadb
           - rdbms: postgresql
           - rdbms: edb
+          - rdbms: oceanbase
           - rdbms: oracle
           - rdbms: db2
           - rdbms: mssql

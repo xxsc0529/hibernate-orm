@@ -70,6 +70,7 @@ public class DefaultDialectSelector implements DialectSelector {
 			case "MySQL57":
 			case "MySQL8":
 			case "MySQL":
+			case "OceanBase":
 				return MySQLDialect.class;
 			case "Oracle8i":
 			case "Oracle9i":
